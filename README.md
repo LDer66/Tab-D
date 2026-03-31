@@ -27,3 +27,20 @@
 | single_view         | 30       | pair       | 0.4        | 0.005236     | 0.016017     | 0.237133        | 0.290382        |
 | dual_view_no_cl     | 30       | pair       | 0.4        | 0.009401     | 0.032572     | 0.345574        | 0.405413        |
 | full                | 30       | pair       | 0.4        | 0.028642     | 0.044121     | 1.117883        | 1.121621        |
+
+**Tab.B.** Per-client per-epoch training time and GPU memory usage for OGBN‑arxiv and OGBN‑products (seconds for time, GB for memory). Training configurations: single_view (single forward pass), dual_view_no_cl (two-view forward pass with pseudo-label prediction, contrastive-loss disabled), full (two-view with contrastive loss). In this work, we ran large-scale experiments using the dual_view_no_cl configuration on local subgraphs. Reported times and memory include only model forward pass, supervision, and pseudo-label prediction, excluding noise node filtering and global aggregation. Statistics are provided for multiple client counts under pair noise (0.4).
+
+| Dataset         | Training Mode       | #Clients | Noise Type | Noise Rate | Avg Time (s) | Max Time (s) | Avg Peak Mem (GB) | Max Peak Mem (GB) |
+|-----------------|-------------------|----------|------------|------------|--------------|--------------|-----------------|-----------------|
+| OGBN-arxiv      | single_view        | 20       | pair       | 0.4        | 0.005273     | 0.013573     | 0.255247        | 0.312641        |
+| OGBN-arxiv      | dual_view_no_cl    | 20       | pair       | 0.4        | 0.007659     | 0.022421     | 0.417646        | 0.483822        |
+| OGBN-arxiv      | full               | 20       | pair       | 0.4        | 0.037562     | 0.048572     | 1.588015        | 1.944603        |
+| OGBN-arxiv      | single_view        | 30       | pair       | 0.4        | 0.005236     | 0.016017     | 0.237133        | 0.290382        |
+| OGBN-arxiv      | dual_view_no_cl    | 30       | pair       | 0.4        | 0.009401     | 0.032572     | 0.345574        | 0.405413        |
+| OGBN-arxiv      | full               | 30       | pair       | 0.4        | 0.028642     | 0.044121     | 1.117883        | 1.121621        |
+| OGBN-products   | single_view        | 40       | pair       | 0.4        | 0.037512     | 0.073223     | 4.305083        | 8.069542        |
+| OGBN-products   | dual_view_no_cl    | 40       | pair       | 0.4        | 0.087293     | 0.149434     | 6.852625        | 10.01119        |
+| OGBN-products   | full               | 40       | pair       | 0.4        | 0.534393     | 0.847719     | 21.48295        | 26.75273        |
+| OGBN-products   | single_view        | 50       | pair       | 0.4        | 0.035286     | 0.062449     | 4.153792        | 7.172859        |
+| OGBN-products   | dual_view_no_cl    | 50       | pair       | 0.4        | 0.076175     | 0.161852     | 6.181344        | 9.721092        |
+| OGBN-products   | full               | 50       | pair       | 0.4        | 0.487724     | 0.819038     | 18.28653        | 24.87993        |
