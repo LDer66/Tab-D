@@ -17,17 +17,6 @@
 | ERASE    | 72.82±0.46    | 48.03±0.52     | 49.82±0.65   | 84.22±0.36    | 70.66±0.86     | 68.46±0.92  | 89.40±0.58       | 73.55±0.63        | 68.55±0.80     |
 | FedRGL   | **79.33±0.37**| **73.15±0.41** | **71.79±0.42**| 86.08±0.32   | **83.20±0.63** | **77.68±0.50** | 90.26±0.39       | **85.14±0.41**    | **83.42±0.65** |  
 
-**Tab.B.** Per-client per-epoch training time and GPU memory usage on OGB‑arxiv (seconds for time, GB for memory). Training configurations: single_view (single forward pass), dual_view_no_cl (two-view forward pass with pseudo-label prediction, contrastive-loss disabled), full (two-view with contrastive loss). In this work, we ran large-scale experiments using the dual_view_no_cl configuration on local subgraphs. Reported times and memory include only model forward pass, supervision, and pseudo-label prediction, excluding noise node filtering and global aggregation. Statistics are provided for 20 and 30 clients under pair noise (0.4).
-
-| Training Mode       | #Clients | Noise Type | Noise Rate | Avg Time (s) | Max Time (s) | Avg Peak Mem (GB) | Max Peak Mem (GB) |
-|--------------------|----------|------------|------------|--------------|--------------|-----------------|-----------------|
-| single_view         | 20       | pair       | 0.4        | 0.005273     | 0.013573     | 0.255247        | 0.312641        |
-| dual_view_no_cl     | 20       | pair       | 0.4        | 0.007659     | 0.022421     | 0.417646        | 0.483822        |
-| full                | 20       | pair       | 0.4        | 0.037562     | 0.048572     | 1.588015        | 1.944603        |
-| single_view         | 30       | pair       | 0.4        | 0.005236     | 0.016017     | 0.237133        | 0.290382        |
-| dual_view_no_cl     | 30       | pair       | 0.4        | 0.009401     | 0.032572     | 0.345574        | 0.405413        |
-| full                | 30       | pair       | 0.4        | 0.028642     | 0.044121     | 1.117883        | 1.121621        |
-
 **Tab.B.** Per-client per-epoch training time and GPU memory usage for OGBN‑arxiv and OGBN‑products (seconds for time, GB for memory). Training configurations: single_view (single forward pass), dual_view_no_cl (two-view forward pass with pseudo-label prediction, contrastive-loss disabled), full (two-view with contrastive loss). In this work, we ran large-scale experiments using the dual_view_no_cl configuration on local subgraphs. Reported times and memory include only model forward pass, supervision, and pseudo-label prediction, excluding noise node filtering and global aggregation. Statistics are provided for multiple client counts under pair noise (0.4).
 
 | Dataset         | Training Mode       | #Clients | Noise Type | Noise Rate | Avg Time (s) | Max Time (s) | Avg Peak Mem (GB) | Max Peak Mem (GB) |
